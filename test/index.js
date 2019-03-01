@@ -67,3 +67,17 @@ describe('pt(time) // **月前', function () {
     expect(pt(t)).to.match(/月前/);
   })
 });
+
+describe('pt(time) // **年前', function () {
+  it('时间间隔以（年）为单位的测试', function () {
+    var time = new Date().getTime()
+      , s   = 1000
+      , min = s * 60
+      , h   = min * 60
+      , d   = h * 24
+      , m   = d * 30
+      , y   = d * 365.25;
+    t = time - y;
+    expect(pt(t)).to.match(/年前/);
+  })
+});
